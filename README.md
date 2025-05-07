@@ -140,7 +140,7 @@ cd standard_classification
 
 Fetch the pretrained teacher models by:
 ```
-sh scripts/fetch_pretrained_teachers.sh
+bash scripts/fetch_pretrained_teachers.sh
 ```
 which will download and save the models to `save/models`
 
@@ -202,7 +202,7 @@ Download the original ViT-B/16 and ViT-L/14 CLIP model weights from the official
 ```
 # Run training on caltech101 with multiple seeds
 for seed in 10 20 30 40 50; do
-  sh scripts/promptkd/base2new_train_kd.sh caltech101 $seed  
+  bash scripts/promptkd/base2new_train_kd.sh caltech101 $seed  
 done
 ```
 
@@ -210,14 +210,14 @@ done
 ```
 # Run training on caltech101 with multiple seeds
 for seed in 10 20 30 40 50; do
-  sh scripts/promptkd/base2new_train_dkd.sh caltech101 $seed  
+  bash scripts/promptkd/base2new_train_dkd.sh caltech101 $seed  
 done
 ```
 
 #### ABKD
 ```
 for seed in 10 20 30 40 50; do
-  sh scripts/promptkd/base2new_train_ab.sh fgvc_aircraft 1.0 1.3 0.5 1.2 2 $seed  100.0
+  bash scripts/promptkd/base2new_train_ab.sh fgvc_aircraft 1.0 1.3 0.5 1.2 2 $seed  100.0
 done
 ```
 
