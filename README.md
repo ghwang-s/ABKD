@@ -7,7 +7,7 @@ This repository is the official PyTorch implementation of ABKD (ICML 2025 Spotli
 
 **Paper Title: Size-invariance Matters: Rethinking Metrics and Losses for Imbalanced Multi-object Salient Object Detection**
 
-**Authors: Guanghui Wang, [Zhiyong Yang*](https://joshuaas.github.io/), [Zitai Wang](https://wang22ti.com/), [Shi Wang](https://ictkc.github.io/)), [Qianqian Xu](https://qianqianxu010.github.io/), [Qingming Huang*](https://people.ucas.ac.cn/~qmhuang)**  
+**Authors: Guanghui Wang, [Zhiyong Yang*](https://joshuaas.github.io/), [Zitai Wang](https://wang22ti.com/), [Shi Wang](https://ictkc.github.io/), [Qianqian Xu](https://qianqianxu010.github.io/), [Qingming Huang*](https://people.ucas.ac.cn/~qmhuang)**  
 
 ## 🚀 Updates
 - [x] (24.05.02) Our paper has been accepted in **ICML 2025**. We are open to receiving any discussions and will reflect them in the camera-ready version.
