@@ -3,7 +3,7 @@
 <!-- <a href="https://arxiv.org/abs/2402.03898"><img src="https://img.shields.io/badge/Paper-arXiv:2402.03898-Green"></a>
 <a href=#bibtex><img src="https://img.shields.io/badge/Paper-BibTex-yellow"></a> -->
 
-This repository is a official PyTorch implementation of **ABKD** (ICML 25 Spotlight). 
+This repository is the official PyTorch implementation of ABKD (ICML 2025 Spotlight).
 
 **Paper Title: Size-invariance Matters: Rethinking Metrics and Losses for Imbalanced Multi-object Salient Object Detection**
 
