@@ -3,7 +3,7 @@
 <!-- <a href="https://arxiv.org/abs/2402.03898"><img src="https://img.shields.io/badge/Paper-arXiv:2402.03898-Green"></a>
 <a href=#bibtex><img src="https://img.shields.io/badge/Paper-BibTex-yellow"></a> -->
 
-This repository is the official PyTorch implementation of ABKD (ICML 2025 Spotlight).
+This repository is the official PyTorch implementation of ABKD (ICML 2025 Spotlight) [link](https://arxiv.org/abs/2505.04560).
 
 **Paper Title: ABKD: Pursuing a Proper Allocation of the Probability Mass in Knowledge Distillation via α-β-Divergence**
 
@@ -227,7 +227,15 @@ The output results will be automatically saved at  `output/base2new/train_base/$
 If you find this repo useful for your research, please consider citing our paper:
 
 ```
-
+@misc{wang2025abkdpursuingproperallocation,
+      title={ABKD: Pursuing a Proper Allocation of the Probability Mass in Knowledge Distillation via $\alpha$-$\beta$-Divergence}, 
+      author={Guanghui Wang and Zhiyong Yang and Zitai Wang and Shi Wang and Qianqian Xu and Qingming Huang},
+      year={2025},
+      eprint={2505.04560},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2505.04560}, 
+}
 ```
 
 ## Contact
