@@ -6,10 +6,10 @@ NNODES=1
 NODE_RANK=0
 GPUS_PER_NODE=${3-16}
 
-START_ALPHA_BETA=${4-0.9}  # alpha_beta 起始值
-END_ALPHA_BETA=${5-0.9}    # alpha_beta 终止值
-START_ALPHA=${6-0.1}  # alpha 起始值
-END_ALPHA=${7-0.1}    # alpha 终止值
+START_ALPHA_BETA=${4-0.9}  
+END_ALPHA_BETA=${5-0.9}   
+START_ALPHA=${6-0.1} 
+END_ALPHA=${7-0.1}   
 
 DISTRIBUTED_ARGS="--nproc_per_node $GPUS_PER_NODE \
                   --nnodes $NNODES \
