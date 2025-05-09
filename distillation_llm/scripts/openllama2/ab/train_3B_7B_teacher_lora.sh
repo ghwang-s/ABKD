@@ -116,12 +116,6 @@ export PYTHONPATH=${BASE_PATH}
 for alpha_beta in $(seq ${START_ALPHA_BETA} 0.1 ${END_ALPHA_BETA}); do
    for alpha in $(seq ${START_ALPHA} 0.1 ${END_ALPHA}); do
        beta=$(echo "$alpha_beta - $alpha" | bc)
-
-              # 跳过 alpha == 0.2 和 beta == 0.7
-    #    if [ $(echo "$alpha == 0.2" | bc) -eq 1 ] && [ $(echo "$beta == 0.7" | bc) -eq 1 ]; then
-    #        echo "Skipping alpha=${alpha} and beta=${beta}"
-    #        continue
-    #    fi
        
        # runtime
        SAVE_PATH="${BASE_PATH}/results/openllama2/train/ab/distill_0.1B_1.5B_final/${alpha}_${beta}"
@@ -138,10 +132,3 @@ for alpha_beta in $(seq ${START_ALPHA_BETA} 0.1 ${END_ALPHA_BETA}); do
        ${CMD}
    done
 done
-
-# CMD="torchrun ${DISTRIBUTED_ARGS} ${BASE_PATH}/finetune.py ${OPTS} $@"
-
-# echo ${CMD}
-# echo "PYTHONPATH=${PYTHONPATH}"
-# mkdir -p ${SAVE_PATH}
-# ${CMD}
