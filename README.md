@@ -12,7 +12,7 @@ This repository is the official PyTorch implementation of ABKD (💫ICML 2025 Sp
 ![fig1_compressed](https://github.com/user-attachments/assets/75795455-1d12-45b0-87ee-8363d5cd51be)
 
 ## 🚀 Updates
-- [x] (24.05.02) Our paper has been accepted in **ICML 2025**. We are open to receiving any discussions and will reflect them in the camera-ready version.
+- [x] (24.05.02) 🥳🥳 Our paper has been accepted in **ICML 2025**. We are open to receiving any discussions and will reflect them in the camera-ready version.
 
 ## Table of Contents
 
