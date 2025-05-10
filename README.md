@@ -7,7 +7,7 @@ This repository is the official PyTorch implementation of ABKD (💫ICML 2025 Sp
 
 **Paper Title: ABKD: Pursuing a Proper Allocation of the Probability Mass in Knowledge Distillation via α-β-Divergence**
 
-**Authors: Guanghui Wang, [Zhiyong Yang*](https://joshuaas.github.io/), [Zitai Wang](https://wang22ti.com/), [Shi Wang](https://ictkc.github.io/), [Qianqian Xu](https://qianqianxu010.github.io/), [Qingming Huang*](https://people.ucas.ac.cn/~qmhuang)**  
+**Authors: [Guanghui Wang](https://scholar.google.com/citations?user=nX6SvJ0AAAAJ&hl=zh-CN), [Zhiyong Yang*](https://joshuaas.github.io/), [Zitai Wang](https://wang22ti.com/), [Shi Wang](https://ictkc.github.io/), [Qianqian Xu](https://qianqianxu010.github.io/), [Qingming Huang*](https://people.ucas.ac.cn/~qmhuang)**  
 
 ![fig1_compressed](https://github.com/user-attachments/assets/75795455-1d12-45b0-87ee-8363d5cd51be)
 
