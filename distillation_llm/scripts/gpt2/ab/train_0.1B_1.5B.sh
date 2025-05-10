@@ -99,7 +99,6 @@ export NCCL_DEBUG=""
 export WANDB_DISABLED=True
 export TF_CPP_MIN_LOG_LEVEL=3
 export PYTHONPATH=${BASE_PATH}
-export CUDA_VISIBLE_DEVICES=0,1,2,3
 
 for alpha in 0.0; do
     for beta in 1.0; do
