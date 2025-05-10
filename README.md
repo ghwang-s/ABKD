@@ -227,14 +227,11 @@ The output results will be automatically saved at  `output/base2new/train_base/$
 If you find this repo useful for your research, please consider citing our paper:
 
 ```
-@misc{wang2025abkdpursuingproperallocation,
-      title={ABKD: Pursuing a Proper Allocation of the Probability Mass in Knowledge Distillation via $\alpha$-$\beta$-Divergence}, 
-      author={Guanghui Wang and Zhiyong Yang and Zitai Wang and Shi Wang and Qianqian Xu and Qingming Huang},
-      year={2025},
-      eprint={2505.04560},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2505.04560}, 
+@article{wang2025abkd,
+  title={ABKD: Pursuing a Proper Allocation of the Probability Mass in Knowledge Distillation via $$\backslash$alpha $-$$\backslash$beta $-Divergence},
+  author={Wang, Guanghui and Yang, Zhiyong and Wang, Zitai and Wang, Shi and Xu, Qianqian and Huang, Qingming},
+  journal={arXiv preprint arXiv:2505.04560},
+  year={2025}
 }
 ```
 
