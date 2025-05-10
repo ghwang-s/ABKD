@@ -95,7 +95,7 @@ OPTS+=" --seed ${SEED}"
 OPTS+=" --deepspeed"
 OPTS+=" --deepspeed_config ${BASE_PATH}/configs/deepspeed/ds_config.json"
 # type
-OPTS+=" --type adaptive-ab"
+OPTS+=" --type ab"
 # gen
 OPTS+=" --do-sample"
 OPTS+=" --top-k 0"
