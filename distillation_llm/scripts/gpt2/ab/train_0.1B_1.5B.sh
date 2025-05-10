@@ -127,25 +127,3 @@ for alpha in 0.0; do
     done
 done
 
-#for alpha_beta in $(seq ${START_ALPHA_BETA} 0.1 ${END_ALPHA_BETA}); do
-#    for alpha in $(seq ${START_ALPHA} 0.1 ${END_ALPHA}); do
-#        beta=$(echo "$alpha_beta - $alpha" | bc)
-#        # runtime
-#        SAVE_PATH="${BASE_PATH}/results/gpt2/train/ab/distill_0.1B_1.5B_final_no-adaptive-/${alpha}_${beta}"
-#        mkdir -p ${SAVE_PATH}
-#
-#        CURRENT_OPTS="${OPTS}"
-#        CURRENT_OPTS+=" --save ${SAVE_PATH}"
-#        CURRENT_OPTS+=" --ab_alpha ${alpha}"
-#        CURRENT_OPTS+=" --ab_beta ${beta}"
-#
-#        CMD="torchrun ${DISTRIBUTED_ARGS} ${BASE_PATH}/finetune.py ${CURRENT_OPTS} $@"
-#        echo ${CMD}
-#        echo "PYTHONPATH=${PYTHONPATH}"
-#        CODE_BASE=HF
-#        ${CMD}
-#    done
-#done
-# bash scripts/gpt2/sft/sft_medium.sh ./ 2012 4
-# bash scripts/gpt2/ab/train_0.1B_1.5B.sh ./ 2012 4 0 0 0 0
-
