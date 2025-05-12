@@ -6,10 +6,10 @@ NNODES=1
 NODE_RANK=0
 GPUS_PER_NODE=${3-16}
 
-START_ALPHA_BETA=${4-1.0}  # alpha_beta 起始值
-END_ALPHA_BETA=${5-1.0}    # alpha_beta 终止值
-START_ALPHA=${6-0.5}  # alpha 起始值
-END_ALPHA=${7-0.5}    # alpha 终止值
+START_ALPHA_BETA=${4-0.9}  # Starting value of alpha + beta
+END_ALPHA_BETA=${5-0.9}    # Ending value of alpha + beta
+START_ALPHA=${6-0.1}       # Starting value of alpha
+END_ALPHA=${7-0.1}         # Ending value of alpha
 
 DISTRIBUTED_ARGS="--nproc_per_node $GPUS_PER_NODE \
                   --nnodes $NNODES \
@@ -95,7 +95,7 @@ OPTS+=" --seed ${SEED}"
 OPTS+=" --deepspeed"
 OPTS+=" --deepspeed_config ${BASE_PATH}/configs/deepspeed/ds_config.json"
 # type
-OPTS+=" --type adaptive-ab"
+OPTS+=" --type ab"
 # gen
 OPTS+=" --do-sample"
 OPTS+=" --top-k 0"
@@ -116,12 +116,6 @@ export PYTHONPATH=${BASE_PATH}
 for alpha_beta in $(seq ${START_ALPHA_BETA} 0.1 ${END_ALPHA_BETA}); do
    for alpha in $(seq ${START_ALPHA} 0.1 ${END_ALPHA}); do
        beta=$(echo "$alpha_beta - $alpha" | bc)
-
-              # 跳过 alpha == 0.2 和 beta == 0.7
-    #    if [ $(echo "$alpha == 0.2" | bc) -eq 1 ] && [ $(echo "$beta == 0.7" | bc) -eq 1 ]; then
-    #        echo "Skipping alpha=${alpha} and beta=${beta}"
-    #        continue
-    #    fi
        
        # runtime
        SAVE_PATH="${BASE_PATH}/results/openllama2/train/ab/distill_0.1B_1.5B_final/${alpha}_${beta}"
@@ -138,10 +132,3 @@ for alpha_beta in $(seq ${START_ALPHA_BETA} 0.1 ${END_ALPHA_BETA}); do
        ${CMD}
    done
 done
-
-# CMD="torchrun ${DISTRIBUTED_ARGS} ${BASE_PATH}/finetune.py ${OPTS} $@"
-
-# echo ${CMD}
-# echo "PYTHONPATH=${PYTHONPATH}"
-# mkdir -p ${SAVE_PATH}
-# ${CMD}

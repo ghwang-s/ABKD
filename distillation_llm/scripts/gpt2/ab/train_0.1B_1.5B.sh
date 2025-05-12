@@ -6,10 +6,11 @@ NNODES=1
 NODE_RANK=0
 GPUS_PER_NODE=${3-4}
 
-START_ALPHA_BETA=${4-0.9}  
-END_ALPHA_BETA=${5-0.9}    
-START_ALPHA=${6-0.2}  
-END_ALPHA=${7-0.2}    
+START_ALPHA_BETA=${4-0.9}  # Starting value of alpha + beta
+END_ALPHA_BETA=${5-0.9}    # Ending value of alpha + beta
+START_ALPHA=${6-0.2}       # Starting value of alpha
+END_ALPHA=${7-0.2}         # Ending value of alpha
+ 
 
 DISTRIBUTED_ARGS="--nproc_per_node $GPUS_PER_NODE \
                   --nnodes $NNODES \
@@ -94,12 +95,11 @@ OPTS+=" --init-threshold 0.0"
 OPTS+=" --loss-eps 0.1"
 OPTS+=" --capacity 1000"
 
-
+export CUDA_VISIBLE_DEVICES=0,1,2,3
 export NCCL_DEBUG=""
 export WANDB_DISABLED=True
 export TF_CPP_MIN_LOG_LEVEL=3
 export PYTHONPATH=${BASE_PATH}
-export CUDA_VISIBLE_DEVICES=0,1,2,3
 
 for alpha in 0.0; do
     for beta in 1.0; do
@@ -127,26 +127,4 @@ for alpha in 0.0; do
         ${CMD}
     done
 done
-
-#for alpha_beta in $(seq ${START_ALPHA_BETA} 0.1 ${END_ALPHA_BETA}); do
-#    for alpha in $(seq ${START_ALPHA} 0.1 ${END_ALPHA}); do
-#        beta=$(echo "$alpha_beta - $alpha" | bc)
-#        # runtime
-#        SAVE_PATH="${BASE_PATH}/results/gpt2/train/ab/distill_0.1B_1.5B_final_no-adaptive-/${alpha}_${beta}"
-#        mkdir -p ${SAVE_PATH}
-#
-#        CURRENT_OPTS="${OPTS}"
-#        CURRENT_OPTS+=" --save ${SAVE_PATH}"
-#        CURRENT_OPTS+=" --ab_alpha ${alpha}"
-#        CURRENT_OPTS+=" --ab_beta ${beta}"
-#
-#        CMD="torchrun ${DISTRIBUTED_ARGS} ${BASE_PATH}/finetune.py ${CURRENT_OPTS} $@"
-#        echo ${CMD}
-#        echo "PYTHONPATH=${PYTHONPATH}"
-#        CODE_BASE=HF
-#        ${CMD}
-#    done
-#done
-# bash scripts/gpt2/sft/sft_medium.sh ./ 2012 4
-# bash scripts/gpt2/ab/train_0.1B_1.5B.sh ./ 2012 4 0 0 0 0
 

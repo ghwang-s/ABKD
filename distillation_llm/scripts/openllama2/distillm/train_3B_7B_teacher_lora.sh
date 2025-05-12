@@ -102,7 +102,6 @@ OPTS+=" --student-gen"
 OPTS+=" --init-threshold 0.2"
 OPTS+=" --loss-eps 0.2"
 
-export CUDA_VISIBLE_DEVICES=1,2,3,5
 export NCCL_DEBUG=""
 export WANDB_DISABLED=True
 export TF_CPP_MIN_LOG_LEVEL=3

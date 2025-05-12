@@ -6,10 +6,11 @@ NNODES=1
 NODE_RANK=0
 GPUS_PER_NODE=${3-16}
 
-START_ALPHA_BETA=${4-1.0}  # alpha_beta 起始值
-END_ALPHA_BETA=${5-1.0}    # alpha_beta 终止值
-START_ALPHA=${6-0.5}  # alpha 起始值
-END_ALPHA=${7-0.5}    # alpha 终止值
+START_ALPHA_BETA=${4-0.9}  # Starting value of alpha + beta
+END_ALPHA_BETA=${5-0.9}    # Ending value of alpha + beta
+START_ALPHA=${6-0.2}       # Starting value of alpha
+END_ALPHA=${7-0.2}         # Ending value of alpha
+
 
 DISTRIBUTED_ARGS="--nproc_per_node $GPUS_PER_NODE \
                   --nnodes $NNODES \
@@ -94,12 +95,11 @@ OPTS+=" --init-threshold 0.0"
 OPTS+=" --loss-eps 0.1"
 OPTS+=" --capacity 1000"
 
-
+export CUDA_VISIBLE_DEVICES=0,1,2,3
 export NCCL_DEBUG=""
 export WANDB_DISABLED=True
 export TF_CPP_MIN_LOG_LEVEL=3
 export PYTHONPATH=${BASE_PATH}
-export CUDA_VISIBLE_DEVICES=2,3,4,5
 
 for alpha_beta in $(seq ${START_ALPHA_BETA} 0.1 ${END_ALPHA_BETA}); do
     for alpha in $(seq ${START_ALPHA} 0.1 ${END_ALPHA}); do
