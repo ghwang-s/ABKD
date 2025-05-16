@@ -51,8 +51,7 @@ SFT data
 
 ```
 bash scripts/gpt2/tools/process_data_dolly.sh /PATH_TO/LMOps/minillm # Process Dolly Train / Validation Data
-bash scripts/opt/tools/process_data_dolly.sh /PATH_TO/LMOps/minillm # Process Dolly Train / Validation Data
-bash scripts/llama/tools/process_data_dolly.sh /PATH_TO/LMOps/minillm # Process Dolly Train / Validation Data
+bash scripts/openllama2/tools/process_data_dolly.sh /PATH_TO/LMOps/minillm # Process Dolly Train / Validation Data
 ```
 
 Get plain-text corpus $\mathcal{D}_\text{PT}$:
