@@ -46,6 +46,15 @@ Our code is based on [this commit](https://github.com/huggingface/transformers/c
 
 
 #### Data Processing
+
+SFT data
+
+```
+bash scripts/gpt2/tools/process_data_dolly.sh /PATH_TO/LMOps/minillm # Process Dolly Train / Validation Data
+bash scripts/opt/tools/process_data_dolly.sh /PATH_TO/LMOps/minillm # Process Dolly Train / Validation Data
+bash scripts/llama/tools/process_data_dolly.sh /PATH_TO/LMOps/minillm # Process Dolly Train / Validation Data
+```
+
 Get plain-text corpus $\mathcal{D}_\text{PT}$:
 ```bash
 python3 tools/get_openwebtext.py
