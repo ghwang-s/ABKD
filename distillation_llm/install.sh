@@ -13,3 +13,5 @@ pip install datasets
 pip install sentencepiece
 pip install protobuf
 pip install peft
+vllm
+fraction
